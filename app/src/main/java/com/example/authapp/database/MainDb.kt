@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.authapp.LatestMessagesActivity
+import com.example.authapp.UserAdapter
 import com.example.authapp.models.User
 
 @Database(entities = [User::class], version = 1)

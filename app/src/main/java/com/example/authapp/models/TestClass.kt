@@ -1,6 +1,11 @@
 package com.example.authapp.models
 
-data class TestClass(
-    val name: String,
-    val surName: String
+class TestClass(
+    val idTest: Int,
+    val loginTest: String,
+    val emailTest: String,
+    val passwordTest: String
     )
+
+
+

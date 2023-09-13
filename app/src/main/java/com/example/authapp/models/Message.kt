@@ -2,9 +2,36 @@ package com.example.authapp.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "messages")
+@Entity(
+    tableName = "messages", foreignKeys = arrayOf(
+
+        ForeignKey(
+            entity = Chat::class,
+            parentColumns = arrayOf("id"),
+            childColumns = arrayOf("chatId"),
+            onDelete = ForeignKey.CASCADE
+        ),
+
+        ForeignKey(
+            entity = User::class,
+            parentColumns = arrayOf("id"),
+            childColumns = arrayOf("toId"),
+            onDelete = ForeignKey.CASCADE
+        ),
+
+        ForeignKey(
+            entity = User::class,
+            parentColumns = arrayOf("id"),
+            childColumns = arrayOf("fromId"),
+            onDelete = ForeignKey.CASCADE
+        )
+
+    )
+)
+
 data class Message(
     @PrimaryKey(autoGenerate = true)
     var id: Int? = null,
